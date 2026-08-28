@@ -1,0 +1,365 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    height:100%;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f8fc;
+    color:#333;
+
+    display:flex;
+    flex-direction:column;
+}
+
+main{
+    flex:1;
+    padding:40px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#1e3a8a;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#3b82f6;
+}
+
+
+
+/* =========================
+   TITULOS
+========================= */
+
+h1{
+    color:#1e3a8a;
+    margin-bottom:15px;
+}
+
+h2{
+    color:#2563eb;
+    margin-bottom:25px;
+}
+
+/* =========================
+   Portada INICIO
+========================= */
+
+.portada{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+    margin-bottom:70px;
+}
+
+.portada-texto{
+    flex:1;
+}
+
+.portada-texto h1{
+    font-size:55px;
+    margin:15px 0;
+}
+
+.portada-texto p{
+    max-width:500px;
+    line-height:1.6;
+}
+
+.portada-imagen{
+    flex:1;
+    text-align:center;
+}
+
+.portada-imagen img{
+    width:350px;
+    max-width:100%;
+}
+
+.boton-principal{
+    display:inline-block;
+    margin-top:20px;
+    background:#2563eb;
+    color:white;
+    padding:12px 25px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+/* =========================
+   PRODUCTOS DESTACADOS
+========================= */
+
+.grilla-productos{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:30px;
+}
+
+.tarjeta-producto{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    text-align:center;
+    transition:.3s;
+}
+
+.tarjeta-producto:hover{
+    transform:translateY(-5px);
+}
+
+.tarjeta-producto img{
+    width:100%;
+    max-width:220px;
+    height:220px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 15px auto;
+}
+
+.tarjeta-producto h3{
+    min-height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#1e3a8a;
+}
+
+.tarjeta-producto p{
+    min-height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* =========================
+   OFERTAS
+========================= */
+
+.descuento{
+    background:#ef4444;
+    color:white;
+    padding:5px 10px;
+    border-radius:5px;
+    font-size:12px;
+    display:inline-block;
+    margin-bottom:10px;
+}
+
+.oferta{
+    background:#22c55e;
+    color:white;
+    padding:5px 10px;
+    border-radius:5px;
+    font-size:12px;
+    display:inline-block;
+    margin-top:10px;
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contenedor-contacto{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:start;
+}
+
+.informacion-contacto p{
+    line-height:1.8;
+}
+
+.formulario-contacto h2{
+    margin-bottom:20px;
+}
+
+/* Formulario de contacto */
+
+.formulario-contacto form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.formulario-contacto form > div{
+    display:grid;
+    grid-template-columns:70px 1fr;
+    align-items:center;
+    gap:10px;
+}
+
+.formulario-contacto label{
+    text-align:left;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.formulario-contacto textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.formulario-contacto button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    width:auto;
+    justify-self:start;
+}
+
+.formulario-contacto button:hover{
+    background:#1e3a8a;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#071633;
+    color:white;
+    padding:40px;
+    margin-top:50px;
+}
+
+.grilla-footer{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+    align-items:start;
+}
+
+.grilla-footer h3,
+.grilla-footer h4{
+    margin-bottom:15px;
+}
+
+.grilla-footer ul{
+    list-style:none;
+    padding:0;
+}
+
+.grilla-footer li{
+    margin-bottom:10px;
+}
+
+.grilla-footer p{
+    line-height:1.6;
+    margin-bottom:10px;
+}
+
+.grilla-footer a{
+    display:inline-block;
+    margin-top:10px;
+}
+
+.grilla-footer img{
+    width:35px;
+}
+
+footer hr{
+    margin:30px 0;
+    border:none;
+    border-top:1px solid rgba(255,255,255,.2);
+}
+
+.copyright{
+    text-align:center;
+}
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .portada{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .contenedor-contacto{
+        grid-template-columns:1fr;
+    }
+
+    .grilla-productos{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .grilla-footer{
+        grid-template-columns:1fr 1fr;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .grilla-productos{
+        grid-template-columns:1fr;
+    }
+
+    .grilla-footer{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+}

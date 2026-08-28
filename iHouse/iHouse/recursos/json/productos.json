@@ -1,0 +1,135 @@
+[
+    {
+        "nombre": "iPhone 17",
+        "descripcion": "La nueva generación Apple con mayor rendimiento.",
+        "imagen": "iphone17.png",
+        "descuento": "10% OFF",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPhone 17 Pro",
+        "descripcion": "Potencia profesional y cámaras avanzadas.",
+        "imagen": "iPhone 17 Pro.gif",
+        "descuento": "10% OFF",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPhone 17 Pro Max",
+        "descripcion": "Máximo rendimiento y experiencia premium.",
+        "imagen": "[MFYP4BE-A] iPhone 17 Pro Max (Azul Profundo, 256 GB).png",
+        "descuento": "15% OFF",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPhone 16",
+        "descripcion": "Equilibrio perfecto entre potencia y diseño.",
+        "imagen": "[MYEA3BE-A] iPhone 16 (Rosa, 128 GB).png",
+        "descuento": "",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPhone 16e",
+        "descripcion": "Rendimiento Apple a un precio accesible.",
+        "imagen": "iphone16e.png",
+        "descuento": "",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPhone 16 Pro",
+        "descripcion": "Diseñado para usuarios exigentes.",
+        "imagen": "[MYNG3BE-A] iPhone 16 Pro (Titanio natural, 128 GB).png",
+        "descuento": "10% OFF",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPhone 16 Pro Max",
+        "descripcion": "Pantalla amplia y potencia profesional.",
+        "imagen": "iPhone 16 Pro.png",
+        "descuento": "15% OFF",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPhone 15",
+        "descripcion": "Tecnología moderna para el día a día.",
+        "imagen": "original.jpeg",
+        "descuento": "",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPhone 15 Pro",
+        "descripcion": "Potencia y elegancia en un solo dispositivo.",
+        "imagen": "d541dac9-ab52-4863-8d9f-69b940519bf0.webp",
+        "descuento": "10% OFF",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPhone 15 Plus",
+        "descripcion": "Una de las versiones más completas de la línea iPhone 15.",
+        "imagen": "15plus.gif",
+        "descuento": "15% OFF",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPad Pro 11″",
+        "descripcion": "Potencia profesional en formato compacto.",
+        "imagen": "[MDWL4LE-A] iPad Pro 11_ (M5) Wi-Fi (Plata, 256 GB, Vidrio estándar).png",
+        "descuento": "",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPad Pro 13″",
+        "descripcion": "Mayor espacio para productividad y creatividad.",
+        "imagen": "iPad Pro 13_ M5 Wi-Fi.gif",
+        "descuento": "30% OFF",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPad Air 11″",
+        "descripcion": "Ligero, rápido y versátil para cualquier tarea.",
+        "imagen": "[MH334LE-A] iPad Air 11_ (M4) Wi-Fi (Blanco estelar, 128 GB).png",
+        "descuento": "",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "iPad Air 13″",
+        "descripcion": "Más espacio para trabajar y disfrutar contenido.",
+        "imagen": "[MH5T4LE-A] iPad Air 13_ (M4) Wi-Fi (Morado, 128 GB).png",
+        "descuento": "",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "MacBook Air 13″",
+        "descripcion": "Ultraliviana y perfecta para el trabajo diario.",
+        "imagen": "mc13.png",
+        "descuento": "",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "MacBook Air 15″",
+        "descripcion": "Más pantalla manteniendo la portabilidad.",
+        "imagen": "mc15.png",
+        "descuento": "",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "MacBook Pro 14″",
+        "descripcion": "Rendimiento profesional para creadores.",
+        "imagen": "mc14.png",
+        "descuento": "10% OFF",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "MacBook Pro 16″",
+        "descripcion": "Máxima potencia para tareas exigentes.",
+        "imagen": "mc16pro.png",
+        "descuento": "15% OFF",
+        "oferta": "12 cuotas sin interés"
+    },
+    {
+        "nombre": "MacBook Neo",
+        "descripcion": "Innovación, diseño y rendimiento de nueva generación.",
+        "imagen": "mcneo.png",
+        "descuento": "30% OFF",
+        "oferta": "12 cuotas sin interés"
+    }
+]
