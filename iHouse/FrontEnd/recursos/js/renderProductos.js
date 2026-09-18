@@ -11,7 +11,6 @@ export function renderizarProductos(productos) {
     productos.forEach(producto => {
 
         const tarjeta = document.createElement("article");
-
         tarjeta.classList.add("tarjeta-producto");
 
         let descuentoHTML = "";
@@ -27,8 +26,8 @@ export function renderizarProductos(productos) {
         tarjeta.innerHTML = `
             ${descuentoHTML}
 
-            <img 
-                src="./recursos/imagenes/${producto.imagen}" 
+            <img
+                src="./recursos/imagenes/${producto.imagen}"
                 alt="${producto.nombre}"
             >
 
@@ -36,11 +35,15 @@ export function renderizarProductos(productos) {
 
             <p>${producto.descripcion}</p>
 
+            <h4>$${producto.precio.toLocaleString("es-AR")}</h4>
+
             <span class="oferta">
                 ${producto.oferta}
             </span>
         `;
 
         contenedor.appendChild(tarjeta);
+
     });
+
 }
