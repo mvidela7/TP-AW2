@@ -2,11 +2,11 @@ import { renderizarProductos } from "./renderProductos.js";
 
 const contenedor = document.getElementById("contenedor-productos");
 
-const URL_API = "https://6aada288a2413bf0ec11b843.mockapi.io/productos";
+const URL_API = "/api/productos";
 
 if (contenedor) {
 
-    fetch(URL_API)
+    fetch("/api/productos")
         .then(respuesta => {
 
             if (!respuesta.ok) {
