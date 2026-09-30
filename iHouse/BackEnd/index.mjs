@@ -1,5 +1,5 @@
-import productos from "./api/productos.mjs";
 import express from "express";
+
 const app = express();
 const PUERTO = 3000;
 
@@ -20,8 +20,26 @@ app.get("/contacto", (req, res) => {
 });
 
 // API de productos
-app.get("/api/productos", (req, res) => {
-    res.json(productos);
+app.get("/api/productos", async (req, res) => {
+    try {
+        const respuesta = await fetch(
+            "https://6aada288a2413bf0ec11b843.mockapi.io/productos"
+        );
+
+        if (!respuesta.ok) {
+            throw new Error("Error al obtener los productos de MockAPI");
+        }
+
+        const productos = await respuesta.json();
+
+        res.json(productos);
+
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).json({
+            error: "No se pudieron obtener los productos"
+        });
+    }
 });
 
 // Servidor
