@@ -1,4 +1,6 @@
+import pool from "./conexion.bd.mjs";
 import express from "express";
+import rutas from "./rutas/rutas.principal.mjs";
 
 const app = express();
 const PUERTO = 3000;
@@ -10,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 // Publicar el FrontEnd
 app.use(express.static("../FrontEnd"));
 
-// Rutas
+// Rutas para navegar entre páginas
 app.get("/catalogo", (req, res) => {
     res.redirect("/catalogo.html");
 });
@@ -19,27 +21,13 @@ app.get("/contacto", (req, res) => {
     res.redirect("/contacto.html");
 });
 
-// API de productos
-app.get("/api/productos", async (req, res) => {
-    try {
-        const respuesta = await fetch(
-            "https://6aada288a2413bf0ec11b843.mockapi.io/productos"
-        );
+// Rutas de productos
+app.use("/api", rutas);
 
-        if (!respuesta.ok) {
-            throw new Error("Error al obtener los productos de MockAPI");
-        }
 
-        const productos = await respuesta.json();
-
-        res.json(productos);
-
-    } catch (error) {
-        console.error("Error:", error);
-        res.status(500).json({
-            error: "No se pudieron obtener los productos"
-        });
-    }
+app.get("/api/prueba-bd", async (req, res) => {
+    const resultado = await pool.query("SELECT * FROM productos");
+    res.json(resultado.rows);
 });
 
 // Servidor
