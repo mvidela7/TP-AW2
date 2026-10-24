@@ -1,6 +1,8 @@
 import pool from "./conexion.bd.mjs";
 import express from "express";
 import rutas from "./rutas/rutas.principal.mjs";
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "./swagger.mjs";
 
 const app = express();
 const PUERTO = 3000;
@@ -8,6 +10,7 @@ const PUERTO = 3000;
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Publicar el FrontEnd
 app.use(express.static("../FrontEnd"));
@@ -24,11 +27,6 @@ app.get("/contacto", (req, res) => {
 // Rutas de productos
 app.use("/api", rutas);
 
-
-app.get("/api/prueba-bd", async (req, res) => {
-    const resultado = await pool.query("SELECT * FROM productos");
-    res.json(resultado.rows);
-});
 
 // Servidor
 app.listen(PUERTO, () => {

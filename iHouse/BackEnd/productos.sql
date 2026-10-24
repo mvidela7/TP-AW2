@@ -3,7 +3,7 @@ CREATE TABLE productos (
     id SERIAL PRIMARY KEY,
     producto VARCHAR(100) NOT NULL,
     precio NUMERIC(10, 2) NOT NULL,
-    imagen VARCHAR(255)
+    imagen TEXT
 );
 
 INSERT INTO productos (producto, precio, imagen) VALUES
