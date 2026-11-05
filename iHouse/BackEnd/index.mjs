@@ -12,21 +12,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// Publicar el FrontEnd
+// Servir archivos estáticos del Front-End
 app.use(express.static("../FrontEnd"));
-
-// Rutas para navegar entre páginas
-app.get("/catalogo", (req, res) => {
-    res.redirect("/catalogo.html");
-});
-
-app.get("/contacto", (req, res) => {
-    res.redirect("/contacto.html");
-});
 
 // Rutas de productos
 app.use("/api", rutas);
-
 
 // Servidor
 app.listen(PUERTO, () => {
