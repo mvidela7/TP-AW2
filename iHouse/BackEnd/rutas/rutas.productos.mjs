@@ -1,5 +1,7 @@
+import subirImagen from "../config/multer.config.mjs";
 import express from "express";
 import controlador from "../modulos/productos/controlador.producto.mjs";
+
 
 const rutasProductos = express.Router();
 /**
@@ -42,7 +44,7 @@ rutasProductos.get("/productos/:id", controlador.obtenerProducto);
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             required:
@@ -51,15 +53,22 @@ rutasProductos.get("/productos/:id", controlador.obtenerProducto);
  *             properties:
  *               nombre:
  *                 type: string
+ *                 example: iPhone 17
  *               precio:
  *                 type: number
+ *                 example: 1500000
  *               imagen:
  *                 type: string
+ *                 format: binary
  *     responses:
  *       201:
- *         description: Producto creado
+ *         description: Producto creado correctamente
+ *       400:
+ *         description: Datos obligatorios faltantes
+ *       500:
+ *         description: Error al crear el producto
  */
-rutasProductos.post("/productos", controlador.crearProducto);
+rutasProductos.post("/productos", subirImagen, controlador.crearProducto);
 /**
  * @swagger
  * /api/productos/{id}:
@@ -72,10 +81,11 @@ rutasProductos.post("/productos", controlador.crearProducto);
  *         required: true
  *         schema:
  *           type: integer
+ *         description: ID del producto a actualizar
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             required:
@@ -84,17 +94,24 @@ rutasProductos.post("/productos", controlador.crearProducto);
  *             properties:
  *               nombre:
  *                 type: string
+ *                 example: iPhone 17 Pro
  *               precio:
  *                 type: number
+ *                 example: 2000000
  *               imagen:
  *                 type: string
+ *                 format: binary
  *     responses:
  *       200:
- *         description: Producto actualizado
+ *         description: Producto actualizado correctamente
+ *       400:
+ *         description: Datos obligatorios faltantes
  *       404:
  *         description: Producto no encontrado
+ *       500:
+ *         description: Error al actualizar el producto
  */
-rutasProductos.put("/productos/:id", controlador.actualizarProducto);
+rutasProductos.put("/productos/:id", subirImagen, controlador.actualizarProducto);
 /**
  * @swagger
  * /api/productos/{id}:

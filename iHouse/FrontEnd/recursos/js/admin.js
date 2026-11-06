@@ -42,7 +42,9 @@ const mostrarProductos = () => {
 
     if (indice === 3 && dato) {
         const enlace = document.createElement("a");
-        enlace.href = dato;
+        enlace.href = dato.startsWith("http")
+    ? dato
+    : `recursos/imagenes/${dato}`;
         enlace.target = "_blank";
         enlace.rel = "noopener noreferrer";
         enlace.textContent = "Ver imagen";
@@ -56,9 +58,12 @@ const mostrarProductos = () => {
 
         const acciones = document.createElement("td");
 
-        const btnEditar = document.createElement("button");
-        btnEditar.textContent = "Editar";
-        btnEditar.addEventListener("click", () => editarProducto(producto.id));
+     const btnEditar = document.createElement("button");
+btnEditar.textContent = "Editar";
+
+btnEditar.addEventListener("click", () => {
+    editarProducto(producto.id);
+});
 
         const btnEliminar = document.createElement("button");
         btnEliminar.textContent = "Eliminar";
@@ -78,30 +83,39 @@ const editarProducto = (id) => {
     document.getElementById("idProducto").value = producto.id;
     document.getElementById("nombre").value = producto.producto;
     document.getElementById("precio").value = producto.precio;
-    document.getElementById("imagen").value = producto.imagen || "";
 
     btnGuardar.textContent = "Guardar cambios";
     btnCancelar.hidden = false;
-};
+}; 
+
+
+btnCancelar.addEventListener("click", () => {
+    formulario.reset();
+    document.getElementById("idProducto").value = "";
+    btnGuardar.textContent = "Agregar producto";
+    btnCancelar.hidden = true;
+    mensaje.textContent = "";
+});
 
 formulario.addEventListener("submit", async (evento) => {
     evento.preventDefault();
 
     const id = document.getElementById("idProducto").value;
+    const archivoImagen = document.getElementById("imagen").files[0];
 
-    const producto = {
-        nombre: document.getElementById("nombre").value.trim(),
-        precio: Number(document.getElementById("precio").value),
-        imagen: document.getElementById("imagen").value.trim()
-    };
+    const datos = new FormData();
+
+    datos.append("nombre", document.getElementById("nombre").value.trim());
+    datos.append("precio", document.getElementById("precio").value);
+
+    if (archivoImagen) {
+        datos.append("imagen", archivoImagen);
+    }
 
     try {
         const respuesta = await fetch(id ? `${API}/${id}` : API, {
             method: id ? "PUT" : "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(producto)
+            body: datos
         });
 
         const resultado = await respuesta.json();
@@ -110,14 +124,18 @@ formulario.addEventListener("submit", async (evento) => {
             throw new Error(resultado.mensaje || "No se pudo guardar el producto");
         }
 
-        mensaje.textContent = id ? "Producto actualizado" : "Producto agregado";
+        mensaje.textContent = id
+            ? "Producto actualizado"
+            : "Producto agregado";
 
         formulario.reset();
         document.getElementById("idProducto").value = "";
+
         btnGuardar.textContent = "Agregar producto";
         btnCancelar.hidden = true;
 
         await cargarProductos();
+
     } catch (error) {
         mensaje.textContent = error.message;
     }
